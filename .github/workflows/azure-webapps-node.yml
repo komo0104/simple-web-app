@@ -16,7 +16,7 @@
 # For more information on GitHub Actions for Azure: https://github.com/Azure/Actions
 # For more information on the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # For more samples to get started with GitHub Action workflows to deploy to Azure: https://github.com/Azure/actions-workflow-samples
-
+name: Build and deploy Node.js app to Azure Web App - simple-web-app
 on:
   push:
     branches: [ "main" ]
@@ -75,6 +75,5 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_02b1a186030e4c04bfaed318e34df4d2 }}
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
